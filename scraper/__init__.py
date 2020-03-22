@@ -4,6 +4,9 @@ import requests
 import sys
 
 def make_soup(url: str) -> BeautifulSoup:
+  '''
+  runs url request and returns BeatifulSoup object
+  '''
   source_code = requests.get(url, allow_redirects=False)
   plain_text = source_code.text.encode('ascii', 'replace')
   return BeautifulSoup(plain_text,'html.parser')
