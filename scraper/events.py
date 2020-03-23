@@ -7,7 +7,6 @@ from typing import List, Dict, Tuple
 
 import scraper
 
-
 EVENTS_URL = 'http://ufcstats.com/statistics/events/completed?page=all'
 BASE_PATH = Path(os.getcwd())/'data'
 EVENTS_PATH = BASE_PATH/'events.json'
