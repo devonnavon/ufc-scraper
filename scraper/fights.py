@@ -2,7 +2,6 @@ import json
 import os
 import multiprocessing
 import threading
-import pandas as pd
 from pathlib import Path
 from bs4 import BeautifulSoup
 from typing import List, Dict, Tuple
