@@ -13,6 +13,8 @@ from typing import List, Dict, Tuple
 import scraper
 
 BASE_PATH = Path(os.getcwd())/'data'
+FIGHTS_PATH = BASE_PATH/'fights.json'
+
 EVENT_URL = 'http://ufcstats.com/event-details/{event_id}'
 FIGHT_URL = 'http://ufcstats.com/fight-details/{fight_id}'
 
@@ -21,6 +23,30 @@ r_total_str.;b_total_str.;r_td;b_td;r_td_pct;b_td_pct;r_sub_att;b_sub_att;r_pass
 r_head;b_head;r_body;b_body;r_leg;b_leg;r_distance;b_distance;r_clinch;b_clinch;r_ground;b_ground;
 win_by;last_round;last_round_time;format;referee;fight_type;winner'''
 
+
+def load_fights(event_ids):
+    '''
+    loads all fights for list of event_ids into data/fights.json
+    appends if fights already there
+    '''
+    #scrape the fight data
+    all_fight_info = []
+    l = len(event_ids)
+    print('Scraping all fight data: ')
+    scraper.print_progress(0, l, prefix = 'Progress:', suffix = 'Complete')
+    for i,event_id in enumerate(event_ids): 
+        all_fight_info += get_event_fights(event_id)
+        scraper.print_progress(i + 1, l, prefix = 'Progress:', suffix = 'Complete')
+    #load into json
+    if not os.path.exists(FIGHTS_PATH): #if file doesn't exist
+        with open(FIGHTS_PATH, 'w') as f:
+            f.write(json.dumps(all_fight_info, indent=4, default=str))
+    else: #if it does we update and dump
+        with open(FIGHTS_PATH, 'r+') as f:
+            old_data = json.load(f)
+            f.seek(0)
+            f.write(json.dumps(all_fight_info+old_data, indent=4, default=str))
+    print(len(all_fight_info), ' fights loaded into ', str(FIGHTS_PATH))
 
 def get_event_fights(event_id: str) -> List[Dict[str,str]]:
     '''
