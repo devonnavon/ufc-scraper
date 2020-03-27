@@ -2,6 +2,7 @@ import json
 import os
 import multiprocessing
 import threading
+from dateutil import parser
 from pathlib import Path
 from bs4 import BeautifulSoup
 from typing import List, Dict, Tuple
@@ -9,14 +10,14 @@ from typing import List, Dict, Tuple
 import scraper
 
 FIGHTERS_PAGE_URL = 'http://ufcstats.com/statistics/fighters?char={letter}&page=all'
-FIGHER_URL = 'http://ufcstats.com/fighter-details/{figher_id}'
+FIGHTER_URL = 'http://ufcstats.com/fighter-details/{fighter_id}'
 
-def get_fighter_info(fighter_id:Dict(str)) -> Dict[str,str]:
+def get_fighter_info(fighter_id:Dict[str,str]) -> Dict[str,str]:
 	'''
-	pass any dict that contains {'figher_id':'ee457ef1e1c326c1'}
+	pass any dict that contains {'fighter_id':'ee457ef1e1c326c1'}
 	returns same dict with data appended 
 	'''
-	url = FIGHER_URL.format(fighter_id=fighter_id['fighter_id'])
+	url = FIGHTER_URL.format(fighter_id=fighter_id['fighter_id'])
 	fighter_soup = scraper.make_soup(url)
 	divs = fighter_soup.findAll('li', {'class':"b-list__box-list-item b-list__box-list-item_type_block"})
 	data = []
@@ -25,8 +26,11 @@ def get_fighter_info(fighter_id:Dict(str)) -> Dict[str,str]:
 			break
 		data.append(div.text.replace('  ', '').replace('\n', '').replace('Height:', '').replace('Weight:', '')\
 					.replace('Reach:', '').replace('STANCE:', '').replace('DOB:', ''))
-	header = ['Height', 'Weight', 'Reach', 'Stance', 'DOB']
-	return data
+	header = ['height', 'weight', 'reach', 'stance', 'dob']
+	final = fighter_id
+	final.update(dict(zip(header,data)))
+	final.update({'dob':parser.parse(final['dob'])})
+	return final
 
 
 def get_all_fighter_ids(page_urls:List[str]) -> List[Dict[str,str]]:
@@ -86,7 +90,7 @@ def get_fighter_ids(page_url:str) -> List[Dict[str,str]]:
 		else:
 			fighter_ids.append(
 				{
-					'figher_id' : name['href'].split('/')[-1],
+					'fighter_id' : name['href'].split('/')[-1],
 					'fighter_name' : fighter_name
 				}
 			)
