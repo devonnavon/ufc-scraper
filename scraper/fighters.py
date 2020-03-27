@@ -2,6 +2,7 @@ import json
 import os
 import multiprocessing
 import threading
+import itertools
 from dateutil import parser
 from pathlib import Path
 from bs4 import BeautifulSoup
@@ -9,8 +10,74 @@ from typing import List, Dict, Tuple
 
 import scraper
 
+BASE_PATH = Path(os.getcwd())/'data'
+FIGHTERS_PATH = BASE_PATH/'fighters.json'
+
 FIGHTERS_PAGE_URL = 'http://ufcstats.com/statistics/fighters?char={letter}&page=all'
 FIGHTER_URL = 'http://ufcstats.com/fighter-details/{fighter_id}'
+
+def load_fighters():
+	'''
+	loads all fighters into data/fighters.json
+	'''
+	page_urls = get_fighter_page_urls() 
+	fighter_ids_names = get_all_fighter_ids(page_urls) 
+	
+	final = []
+	bs = 20 #batch size
+	prev = 0 #starting index
+	indices = range(bs,len(fighter_ids_names)+bs)
+
+	print('Scraping all fight data: ')
+	scraper.print_progress(0, len(fighter_ids_names), prefix = 'Progress:', suffix = 'Complete')
+
+	for num in itertools.islice(indices,None,None,bs):
+		final += get_all_fighter_info(fighter_ids_names[prev:num]) #run for batch
+		prev = num
+		if num > len(fighter_ids_names):
+			num = len(fighter_ids_names) #dumb check for progress bar
+		scraper.print_progress(num, len(fighter_ids_names), prefix = 'Progress:', suffix = 'Complete')
+	
+	with open(FIGHTERS_PATH, 'w') as f:
+		f.write(json.dumps(final, indent=4, default=str))
+
+
+def get_all_fighter_info(fighter_ids:List[Dict[str,str]]) -> List[Dict[str,str]]:
+	'''
+	get fighter info from a list of dicts fighters multithreads (should really generalize)
+	'''
+	q = multiprocessing.Queue() #queue to store the results
+	t = {} #dict to hold our threads
+	all_fighter_info = []
+
+	def put_fighter_info(fighter_id):
+		fighter_info = get_fighter_info(fighter_id)
+		q.put(fighter_info)
+
+	for fighter_id in fighter_ids:
+		t[fighter_id['fighter_id']] = threading.Thread(target=put_fighter_info, args=(fighter_id,))
+		t[fighter_id['fighter_id']].start()
+
+	for thread in t: #join closes out the threads (i think)
+		t[thread].join() 
+
+	while not q.empty():
+		queue_top = q.get()
+		all_fighter_info.append(queue_top)
+
+	retry=[]
+	final=[]
+	for info in all_fighter_info:
+		if len(info) == 2: #nothing got appended
+			retry.append(info)
+		else:
+			final.append(info)
+	
+	if len(retry) > 0:
+		final+=get_all_fighter_info(retry)
+
+	return final
+
 
 def get_fighter_info(fighter_id:Dict[str,str]) -> Dict[str,str]:
 	'''
@@ -19,6 +86,8 @@ def get_fighter_info(fighter_id:Dict[str,str]) -> Dict[str,str]:
 	'''
 	url = FIGHTER_URL.format(fighter_id=fighter_id['fighter_id'])
 	fighter_soup = scraper.make_soup(url)
+	if fighter_soup.find('h2').text == 'Server Too Busy':
+		return fighter_id
 	divs = fighter_soup.findAll('li', {'class':"b-list__box-list-item b-list__box-list-item_type_block"})
 	data = []
 	for i, div in enumerate(divs):
@@ -27,11 +96,9 @@ def get_fighter_info(fighter_id:Dict[str,str]) -> Dict[str,str]:
 		data.append(div.text.replace('  ', '').replace('\n', '').replace('Height:', '').replace('Weight:', '')\
 					.replace('Reach:', '').replace('STANCE:', '').replace('DOB:', ''))
 	header = ['height', 'weight', 'reach', 'stance', 'dob']
-	final = fighter_id
+	final = fighter_id.copy()
 	final.update(dict(zip(header,data)))
-	final.update({'dob':parser.parse(final['dob'])})
 	return final
-
 
 def get_all_fighter_ids(page_urls:List[str]) -> List[Dict[str,str]]:
 	'''

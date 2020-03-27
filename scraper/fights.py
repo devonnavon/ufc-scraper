@@ -20,7 +20,7 @@ r_head;b_head;r_body;b_body;r_leg;b_leg;r_distance;b_distance;r_clinch;b_clinch;
 win_by;last_round;last_round_time;format;referee;fight_type;winner'''
 
 
-def load_fights(event_ids):
+def load_fights(event_ids:str):
     '''
     loads all fights for list of event_ids into data/fights.json
     appends if fights already there
