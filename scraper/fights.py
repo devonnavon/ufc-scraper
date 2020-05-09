@@ -14,10 +14,7 @@ FIGHTS_PATH = BASE_PATH/'fights.json'
 EVENT_URL = 'http://ufcstats.com/event-details/{event_id}'
 FIGHT_URL = 'http://ufcstats.com/fight-details/{fight_id}'
 
-FIGHT_HEADER = '''r_fighter;b_fighter;r_kd;b_kd;r_sig_str.;b_sig_str.;r_sig_str_pct;b_sig_str_pct;
-r_total_str.;b_total_str.;r_td;b_td;r_td_pct;b_td_pct;r_sub_att;b_sub_att;r_pass;b_pass;r_rev;b_rev;
-r_head;b_head;r_body;b_body;r_leg;b_leg;r_distance;b_distance;r_clinch;b_clinch;r_ground;b_ground;
-win_by;last_round;last_round_time;format;referee;fight_type;winner'''
+FIGHT_HEADER = '''r_fighter;b_fighter;r_kd;b_kd;r_sig_str.;b_sig_str.;r_sig_str_pct;b_sig_str_pct;r_total_str.;b_total_str.;r_td;b_td;r_td_pct;b_td_pct;r_sub_att;b_sub_att;r_pass;b_pass;r_rev;b_rev;r_head;b_head;r_body;b_body;r_leg;b_leg;r_distance;b_distance;r_clinch;b_clinch;r_ground;b_ground;win_by;last_round;last_round_time;format;referee;fight_type;winner'''
 
 
 def load_fights(event_ids:str):
