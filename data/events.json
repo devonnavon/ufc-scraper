@@ -709,7 +709,7 @@
     },
     {
         "id": "ed069a95aaaf4f56",
-        "name": "UFC Fight Night: Johnson vs. Reis",
+        "name": "UFC on FOX: Johnson vs. Reis",
         "date": "2017-04-15 00:00:00",
         "location": "Kansas City, Missouri, USA"
     },
@@ -757,7 +757,7 @@
     },
     {
         "id": "4512e46543b960ad",
-        "name": "UFC Fight Night: Shevchenko vs. Pena",
+        "name": "UFC on FOX: Shevchenko vs. Pena",
         "date": "2017-01-28 00:00:00",
         "location": "Denver, Colorado, USA"
     },
@@ -775,7 +775,7 @@
     },
     {
         "id": "32541eb5d12668b4",
-        "name": "UFC Fight Night: VanZant vs. Waterson",
+        "name": "UFC on FOX: VanZant vs. Waterson",
         "date": "2016-12-17 00:00:00",
         "location": "Sacramento, California, USA"
     },
@@ -865,7 +865,7 @@
     },
     {
         "id": "cfbccfed4e4796fe",
-        "name": "UFC Fight Night: Maia vs. Condit",
+        "name": "UFC on FOX: Maia vs. Condit",
         "date": "2016-08-27 00:00:00",
         "location": "Vancouver, British Columbia, Canada"
     },
@@ -889,7 +889,7 @@
     },
     {
         "id": "8a028648f3f0761d",
-        "name": "UFC Fight Night: Holm vs. Shevchenko",
+        "name": "UFC on FOX: Holm vs. Shevchenko",
         "date": "2016-07-23 00:00:00",
         "location": "Chicago, Illinois, USA"
     },
@@ -955,7 +955,7 @@
     },
     {
         "id": "e7e970d508529bf3",
-        "name": "UFC Fight Night: Teixeira vs Evans",
+        "name": "UFC on FOX: Teixeira vs Evans",
         "date": "2016-04-16 00:00:00",
         "location": "Tampa, Florida, USA"
     },
@@ -997,7 +997,7 @@
     },
     {
         "id": "b3fb8d2293e17a59",
-        "name": "UFC Fight Night: Johnson vs. Bader",
+        "name": "UFC on FOX: Johnson vs. Bader",
         "date": "2016-01-30 00:00:00",
         "location": "Newark, New Jersey, USA"
     },
@@ -1057,7 +1057,7 @@
     },
     {
         "id": "5345f86680378fc1",
-        "name": "UFC Fight Night: Belfort vs Henderson",
+        "name": "UFC Fight Night: Belfort vs Henderson 3",
         "date": "2015-11-07 00:00:00",
         "location": "Sao Paulo, Sao Paulo, Brazil"
     },
@@ -1105,7 +1105,7 @@
     },
     {
         "id": "0c3838c8f7c620c2",
-        "name": "UFC on Fox: Dillashaw vs. Barao II",
+        "name": "UFC on FOX: Dillashaw vs. Barao II",
         "date": "2015-07-25 00:00:00",
         "location": "Chicago, Illinois, USA"
     },
@@ -1189,7 +1189,7 @@
     },
     {
         "id": "bc7cf284c1c2f16e",
-        "name": "UFC Fight Night: Machida vs Rockhold",
+        "name": "UFC on FOX: Machida vs Rockhold",
         "date": "2015-04-18 00:00:00",
         "location": "Newark, New Jersey, USA"
     },
@@ -1243,7 +1243,7 @@
     },
     {
         "id": "706404da0775dcbc",
-        "name": "UFC Fight Night: Gustafsson vs Johnson",
+        "name": "UFC on FOX: Gustafsson vs Johnson",
         "date": "2015-01-24 00:00:00",
         "location": "Stockholm, Sweden"
     },
@@ -1267,7 +1267,7 @@
     },
     {
         "id": "d4a12dfa4067742f",
-        "name": "UFC Fight Night: Dos Santos vs Miocic",
+        "name": "UFC on FOX: Dos Santos vs Miocic",
         "date": "2014-12-13 00:00:00",
         "location": "Phoenix, Arizona, USA"
     },
@@ -1339,13 +1339,13 @@
     },
     {
         "id": "a71feb7ea7592a71",
-        "name": "UFC Fight Night: Silva vs Arlovski",
+        "name": "UFC Fight Night: Bigfoot vs Arlovski",
         "date": "2014-09-13 00:00:00",
         "location": "Brasilia, Distrito Federal, Brazil"
     },
     {
         "id": "9bcfb40dbcd50568",
-        "name": "UFC Fight Night: Souza vs Mousasi",
+        "name": "UFC Fight Night: Jacare vs Mousasi",
         "date": "2014-09-05 00:00:00",
         "location": "Ledyard, Connecticut, USA"
     },
@@ -1375,7 +1375,7 @@
     },
     {
         "id": "05fbfe628658c538",
-        "name": "UFC on Fox: Lawler vs Brown",
+        "name": "UFC on FOX: Lawler vs Brown",
         "date": "2014-07-26 00:00:00",
         "location": "San Jose, California, USA"
     },
@@ -1387,7 +1387,7 @@
     },
     {
         "id": "79ded75550efc139",
-        "name": "UFC Fight Night: Cerrone vs Miller",
+        "name": "UFC Fight Night: Cowboy vs Miller",
         "date": "2014-07-16 00:00:00",
         "location": "Atlantic City, New Jersey, USA"
     },
@@ -1429,7 +1429,7 @@
     },
     {
         "id": "59aaf2730b84698a",
-        "name": "TUF Brazil Finale: Miocic vs Maldonado",
+        "name": "UFC Fight Night: Miocic vs Maldonado",
         "date": "2014-05-31 00:00:00",
         "location": "Sao Paulo, Brazil"
     },
@@ -1459,7 +1459,7 @@
     },
     {
         "id": "a421465acbe59c77",
-        "name": "UFC on Fox: Werdum vs Browne",
+        "name": "UFC on FOX: Werdum vs Browne",
         "date": "2014-04-19 00:00:00",
         "location": "Orlando, Florida, USA"
     },
@@ -1477,7 +1477,7 @@
     },
     {
         "id": "d5f820c11a121050",
-        "name": "UFC Fight Night: Shogun vs Henderson",
+        "name": "UFC Fight Night: Shogun vs Henderson 2",
         "date": "2014-03-23 00:00:00",
         "location": "Natal, Rio Grande do Norte, Brazil"
     },
@@ -1519,7 +1519,7 @@
     },
     {
         "id": "a8d521d913df4e31",
-        "name": "UFC on Fox: Henderson vs Thomson",
+        "name": "UFC on FOX: Henderson vs Thomson",
         "date": "2014-01-25 00:00:00",
         "location": "Chicago, Illinois, USA"
     },
@@ -1543,7 +1543,7 @@
     },
     {
         "id": "480b702debcb5433",
-        "name": "UFC on Fox: Johnson vs. Benavidez 2",
+        "name": "UFC on FOX: Johnson vs. Benavidez 2",
         "date": "2013-12-14 00:00:00",
         "location": "Sacramento, California, USA"
     },
@@ -1567,7 +1567,7 @@
     },
     {
         "id": "5d7c18191b8aa432",
-        "name": "UFC Fight Night: Belfort vs Henderson",
+        "name": "UFC Fight Night: Belfort vs Henderson 2",
         "date": "2013-11-09 00:00:00",
         "location": "Goiania, Goias, Brazil"
     },
@@ -1633,7 +1633,7 @@
     },
     {
         "id": "5330fe7e4c3af81c",
-        "name": "UFC on Fox: Johnson vs Moraga",
+        "name": "UFC on FOX: Johnson vs Moraga",
         "date": "2013-07-27 00:00:00",
         "location": "Seattle, Washington, USA"
     },
@@ -1651,7 +1651,7 @@
     },
     {
         "id": "7865707fd684d77b",
-        "name": "UFC on FUEL TV 10",
+        "name": "UFC on FUEL TV: Nogueira vs. Werdum",
         "date": "2013-06-08 00:00:00",
         "location": "Fortaleza, Ceara, Brazil"
     },
@@ -1687,7 +1687,7 @@
     },
     {
         "id": "6291ac0a3726732f",
-        "name": "UFC on FUEL TV 9: Mousasi vs Latifi",
+        "name": "UFC on FUEL TV: Mousasi vs Latifi",
         "date": "2013-04-06 00:00:00",
         "location": "Stockholm, Sweden"
     },
@@ -1699,7 +1699,7 @@
     },
     {
         "id": "83c6c3e0f8bde8ee",
-        "name": "UFC on FUEL TV: Japan",
+        "name": "UFC on FUEL TV: Silva vs. Stann",
         "date": "2013-03-02 00:00:00",
         "location": "Saitama, Japan"
     },
@@ -1723,7 +1723,7 @@
     },
     {
         "id": "738acab0c6934dd8",
-        "name": "UFC on Fox: Johnson vs Dodson",
+        "name": "UFC on FOX: Johnson vs Dodson",
         "date": "2013-01-26 00:00:00",
         "location": "Chicago, Illinois, USA"
     },
@@ -1753,7 +1753,7 @@
     },
     {
         "id": "d1e6a6536ee62517",
-        "name": "UFC on Fox: Henderson vs Diaz",
+        "name": "UFC on FOX: Henderson vs Diaz",
         "date": "2012-12-08 00:00:00",
         "location": "Seattle, Washington, USA"
     },
@@ -1945,7 +1945,7 @@
     },
     {
         "id": "1c061eb6e29eaa0a",
-        "name": "UFC on Fox: Velasquez vs Dos Santos",
+        "name": "UFC on FOX: Velasquez vs Dos Santos",
         "date": "2011-11-12 00:00:00",
         "location": "Anaheim, California, USA"
     },
@@ -1969,7 +1969,7 @@
     },
     {
         "id": "44f9c777fed7ca03",
-        "name": "UFC LIVE 6: Cruz vs Johnson",
+        "name": "UFC Live: Cruz vs Johnson",
         "date": "2011-10-01 00:00:00",
         "location": "Washington, DC, USA"
     },
@@ -1981,7 +1981,7 @@
     },
     {
         "id": "1ffc38f67785797b",
-        "name": "UFC Fight Night Live: Shields vs Ellenberger",
+        "name": "UFC Fight Night: Shields vs Ellenberger",
         "date": "2011-09-17 00:00:00",
         "location": "New Orleans, Louisiana, USA"
     },
@@ -1993,7 +1993,7 @@
     },
     {
         "id": "4c8d6fde2dde07c4",
-        "name": "UFC LIVE 5: Hardy vs Lytle",
+        "name": "UFC Live: Hardy vs Lytle",
         "date": "2011-08-14 00:00:00",
         "location": "Milwaukee, Wisconsin, USA"
     },
@@ -2011,7 +2011,7 @@
     },
     {
         "id": "d023ae89a2a4a41e",
-        "name": "UFC Live on Versus: Kongo vs Barry",
+        "name": "UFC Live: Kongo vs Barry",
         "date": "2011-06-26 00:00:00",
         "location": "Pittsburgh, Pennsylvania, USA"
     },
@@ -2053,7 +2053,7 @@
     },
     {
         "id": "a54fc2d6fc224dc3",
-        "name": "UFC on VERSUS: Sanchez vs Kampmann",
+        "name": "UFC Live: Sanchez vs Kampmann",
         "date": "2011-03-03 00:00:00",
         "location": "Louisville, Kentucky, USA"
     },
@@ -2143,7 +2143,7 @@
     },
     {
         "id": "f12f979b657ab876",
-        "name": "UFC LIVE: Jones vs Matyushenko",
+        "name": "UFC Live: Jones vs Matyushenko",
         "date": "2010-08-01 00:00:00",
         "location": "San Diego, California, USA"
     },
@@ -2197,7 +2197,7 @@
     },
     {
         "id": "3795fca327cbcf23",
-        "name": "UFC on Versus: Vera vs Jones",
+        "name": "UFC Live: Vera vs Jones",
         "date": "2010-03-21 00:00:00",
         "location": "Broomfield, Colorado, USA"
     },
